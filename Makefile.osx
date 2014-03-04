@@ -1,0 +1,32 @@
+#!/usr/bin/env make
+
+# maybe helpful:
+#   https://github.com/tpaviot/oce/issues/372
+
+default: ccmake
+
+clean-cmake:
+	rm -rf CMakeFiles CMakeTmpDup CPackConfig.cmake CPackSourceConfig.cmake CMakeCache.txt
+
+cmake:
+	cmake \
+		-DOCE_INSTALL_PREFIX:PATH=/tmp/test-oce \
+		-DOCE_VISUALISATION:BOOL=OFF \
+		-DOCE_DISABLE_X11:BOOL=ON \
+		-DOCE_OSX_USE_COCOA:BOOL=OFF \
+		-DOCE_MULTITHREAD_LIBRARY:STRING=NONE \
+		-DOCE_BUILD_SHARED_LIB:BOOL=OFF
+
+ccmake:
+	ccmake \
+		-DOCE_INSTALL_PREFIX:PATH=/tmp/test-oce \
+		-DOCE_VISUALISATION:BOOL=OFF \
+		-DOCE_DISABLE_X11:BOOL=ON \
+		-DOCE_OSX_USE_COCOA:BOOL=OFF \
+		-DOCE_MULTITHREAD_LIBRARY:STRING=NONE \
+		-DOCE_BUILD_SHARED_LIB:BOOL=OFF \
+		-G Xcode
+
+
+.PHONY: default clean-cmake ccmake cmake
+

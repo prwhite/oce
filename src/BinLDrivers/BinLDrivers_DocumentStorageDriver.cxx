@@ -171,9 +171,12 @@ void BinLDrivers_DocumentStorageDriver::Write
     if (!anOS) {
       // A problem with the stream
 #if defined(_DEBUG) || defined(DEB)
-      WriteMessage (anErrorStr + aMethStr +
-                    "Problem with the file stream, rdstate="
-                    + anOS.rdstate());
+
+// PRWFIXME
+
+//      WriteMessage (anErrorStr + aMethStr +
+//                    "Problem with the file stream, rdstate="
+//                    + anOS.rdstate());
 #else
       TCollection_ExtendedString aStr =
         anErrorStr + aMethStr + "Problem writing the file ";

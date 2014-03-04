@@ -1,0 +1,14 @@
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+CPackSourceConfig.cmake
+CPackConfig.cmake
+OCEConfigVersion.cmake
+Version.rc
+OCEConfig.cmake
+build_inc
+install_inc
+cmake_install.cmake
+cmake_uninstall.cmake
+OCE.build
+Darwin
