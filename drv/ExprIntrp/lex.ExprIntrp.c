@@ -41,11 +41,17 @@
 #endif
 #endif
 
-
-#ifdef __cplusplus
+//PRWFIXME No idea why these includes were in the ifdef __cplusplus block...
+// there was something missing for C builds so I pulled them up.  There is
+// possibly a more concise/correct solution... but not by much.  And... this
+// is a generated file... so it's possible that a newer version of the
+// generator will fix this.
 
 #include <stdlib.h>
 #include <unistd.h>
+
+#ifdef __cplusplus
+
 
 /* Use prototypes in function declarations. */
 #define YY_USE_PROTOS

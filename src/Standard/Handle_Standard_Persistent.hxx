@@ -45,8 +45,10 @@
 
 #ifndef PUndefinedAddress 
 #ifdef _OCC64
+#warning 64bit
 #define PUndefinedAddress ((Standard_Persistent *)0xfefdfefdfefd0000ull)
 #else
+#warning 32bit
 #define PUndefinedAddress ((Standard_Persistent *)0xfefd0000)
 #endif
 #endif

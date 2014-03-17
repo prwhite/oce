@@ -25,7 +25,19 @@
 #include <OSD_WhoAmI.hxx>
 
 //const OSD_WhoAmI Iam = OSD_WEnvironmentIterator;
+
+// PRWFIXME Needed to have a better way of distinguishing whether crt_externs.h
+// should be included... it does not exist on iOS... possibly this would be
+// better driven by oce-config.h... but that's an exercise for later.
+
 #ifdef __APPLE__
+  #include "TargetConditionals.h"
+  #if TARGET_OS_IPHONE == 0
+    #define OCE_APPLE_NEED_CRT_EXTERNS 1
+  #endif // TARGET_OS_IPHONE
+#endif
+
+#if OCE_APPLE_NEED_CRT_EXTERNS
 #include <crt_externs.h>
 #define environ (*_NSGetEnviron())
 #else

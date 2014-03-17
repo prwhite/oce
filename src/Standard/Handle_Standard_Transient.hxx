@@ -42,8 +42,10 @@
 
 #ifndef UndefinedHandleAddress 
 #ifdef _OCC64
+#warning 64bit
 #define UndefinedHandleAddress ((Standard_Transient *)0xfefdfefdfefd0000ull)
 #else
+#warning 32bit
 #define UndefinedHandleAddress ((Standard_Transient *)0xfefd0000)
 #endif
 #endif

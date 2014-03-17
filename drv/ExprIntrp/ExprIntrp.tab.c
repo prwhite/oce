@@ -27,6 +27,11 @@
 #pragma warning(push,0)
 #endif
 
+// PRWFIXME Temp due to missing declarations and stricter 64-bit llvm compile.
+extern void ExprIntrperror(char* msg);
+extern int ExprIntrplex ();
+
+
 #define YYBISON 1  /* Identify Bison output.  */
 
 #define yyparse ExprIntrpparse

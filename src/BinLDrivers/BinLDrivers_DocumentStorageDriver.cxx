@@ -172,7 +172,8 @@ void BinLDrivers_DocumentStorageDriver::Write
       // A problem with the stream
 #if defined(_DEBUG) || defined(DEB)
 
-// PRWFIXME
+// PRWFIXME The macro expansion was referencing something undefined for
+// OS X / iOS builds... punted for now... need to fix though.
 
 //      WriteMessage (anErrorStr + aMethStr +
 //                    "Problem with the file stream, rdstate="
