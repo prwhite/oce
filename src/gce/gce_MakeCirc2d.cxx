@@ -207,7 +207,7 @@ gce_MakeCirc2d::gce_MakeCirc2d(const gp_Circ2d&    Circ  ,
 
 const gp_Circ2d& gce_MakeCirc2d::Value() const
 { 
-  StdFail_NotDone_Raise_if(!TheError == gce_Done,"");
+  StdFail_NotDone_Raise_if(!(TheError == gce_Done),"");
   return TheCirc2d;
 }
 

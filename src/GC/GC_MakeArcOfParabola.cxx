@@ -59,7 +59,7 @@ GC_MakeArcOfParabola::GC_MakeArcOfParabola(const gp_Parab& Parab ,
 
 const Handle(Geom_TrimmedCurve)& GC_MakeArcOfParabola::Value() const
 { 
-  StdFail_NotDone_Raise_if(!TheError == gce_Done,"");
+  StdFail_NotDone_Raise_if(!(TheError == gce_Done),"");
   return TheArc;
 }
 

@@ -59,7 +59,7 @@ GC_MakeArcOfEllipse::GC_MakeArcOfEllipse(const gp_Elips& Elips   ,
 
 const Handle(Geom_TrimmedCurve)& GC_MakeArcOfEllipse::Value() const
 { 
-  StdFail_NotDone_Raise_if(!TheError == gce_Done,"");
+  StdFail_NotDone_Raise_if(!(TheError == gce_Done),"");
   return TheArc;
 }
 
